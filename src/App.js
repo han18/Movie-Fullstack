@@ -1,9 +1,20 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 
+//useEffect
+
 function App() {
+  // connect to the backend and creating a get request
+  useEffect(() => {
+    const fetchData = async () => {
+      console.log("fetching data...");
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
-      <h1>This is a movie full-Stack app</h1>
+      <h1>Movie full-Stack app</h1>
     </div>
   );
 }
