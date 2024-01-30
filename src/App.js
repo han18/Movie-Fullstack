@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import MovieList from "./components/MovieList";
 
 //useEffect
 
@@ -23,6 +24,7 @@ function App() {
   return (
     <div className="App">
       <h1>Movie full-Stack app</h1>
+      <MovieList movies={movies} />
     </div>
   );
 }
