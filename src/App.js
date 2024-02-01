@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       <div className="App">
         <h1>Movie Full-Stack App</h1>
         <NavBar />
@@ -39,7 +39,7 @@ function App() {
         </Routes>
         {/* <MovieList movies={movies} /> */}
       </div>
-    </ThemeContext>
+    </ThemeContext.Provider>
   );
 }
 

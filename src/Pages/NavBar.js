@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 function NavBar() {
+  const themeCtx = useContext(ThemeContext);
+  console.log(ThemeContext);
   return (
     <nav>
       <ul>
