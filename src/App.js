@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import MovieList from "./components/MovieList";
+import { Route, Routes } from "react-router-dom";
+import MainPage from "./Pages/MainPage";
+import MovieDetails from "./components/MovieDetails";
+import NavBar from "./Pages/NavBar";
 
 //useEffect
 
@@ -23,8 +27,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Movie full-Stack app</h1>
-      <MovieList movies={movies} />
+      <h1>Movie Full-Stack App</h1>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/movies" element={<MovieList movies={movies} />} />
+        <Route path="/movies/:id" element={<MovieDetails />} />
+      </Routes>
+      {/* <MovieList movies={movies} /> */}
     </div>
   );
 }
