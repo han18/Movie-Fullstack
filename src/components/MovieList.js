@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import MovieItem from "./MovieItem";
 import Spinner from "react-bootstrap/Spinner";
+import { ThemeContext } from "../context/ThemeContext";
 
 function MovieList({ movies }) {
+  const themeCtx = useContext(ThemeContext);
+  const { theme } = themeCtx;
+
   return (
-    <div>
+    <div style={{ backgroundColor: theme === "light" ? "#fff" : "#000" }}>
       <h1>Movie List</h1>
       <div>
         {movies.length >= 1 ? (
