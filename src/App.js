@@ -5,13 +5,15 @@ import { Route, Routes } from "react-router-dom";
 import MainPage from "./Pages/MainPage";
 import MovieDetails from "./components/MovieDetails";
 import NavBar from "./Pages/NavBar";
+import { ThemeContext } from "./context/ThemeContext";
 
 //useEffect
 
 function App() {
   const [movies, setMovies] = useState([]);
-  // setting data to movies
+  const [theme, setTheme] = useState("light");
 
+  // setting data to movies
   // connect to the backend and creating a get request
   useEffect(() => {
     const fetchData = async () => {
@@ -26,16 +28,18 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <h1>Movie Full-Stack App</h1>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/movies" element={<MovieList movies={movies} />} />
-        <Route path="/movies/:id" element={<MovieDetails />} />
-      </Routes>
-      {/* <MovieList movies={movies} /> */}
-    </div>
+    <ThemeContext.Provider value={{theme, setTheme}}>
+      <div className="App">
+        <h1>Movie Full-Stack App</h1>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/movies" element={<MovieList movies={movies} />} />
+          <Route path="/movies/:id" element={<MovieDetails />} />
+        </Routes>
+        {/* <MovieList movies={movies} /> */}
+      </div>
+    </ThemeContext>
   );
 }
 
