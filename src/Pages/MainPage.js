@@ -1,4 +1,9 @@
+import { useRef } from "react";
+
 function MainPage() {
+  const emailInputRef = useRef(null);
+  const passwordInputRef = useRef(null);
+
   return (
     <main>
       <h1>Main Page</h1>
@@ -10,6 +15,7 @@ function MainPage() {
           <h3>Sign In</h3>
           <label htmlFor="email">Email</label>
           <input
+            ref={emailInputRef}
             name="email"
             id="email"
             type="text"
@@ -17,6 +23,7 @@ function MainPage() {
           />
           <label htmlFor="password">Password</label>
           <input
+            ref={passwordInputRef}
             name="password"
             id="password"
             type="text"
