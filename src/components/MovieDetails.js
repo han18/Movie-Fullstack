@@ -1,3 +1,5 @@
+// this is to get the specif id on each movie
+
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 

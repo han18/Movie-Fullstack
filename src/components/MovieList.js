@@ -24,10 +24,10 @@ function MovieList({ movies }) {
 export default MovieList;
 
 // old code
-{
-  /* <div>
-        {movies.map((movie) => (
-          <MovieItem movie={movie} key={movie._id} />
-        ))}
-      </div> */
-}
+// {
+//   /* <div>
+//         {movies.map((movie) => (
+//           <MovieItem movie={movie} key={movie._id} />
+//         ))}
+//       </div> */
+// }
