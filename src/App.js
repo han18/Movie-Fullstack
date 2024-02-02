@@ -13,7 +13,7 @@ import { UserContext } from "./context/UserContext";
 function App() {
   const [movies, setMovies] = useState([]);
   const [theme, setTheme] = useState("light");
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null); // adding a {} keeps the user logged in null signed out
 
   // setting data to movies
   // connect to the backend and creating a get request

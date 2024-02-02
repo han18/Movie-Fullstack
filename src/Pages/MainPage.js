@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import axios from "react";
 
 function MainPage() {
   const emailInputRef = useRef(null);
@@ -18,6 +19,12 @@ function MainPage() {
       passwordInputRef.current.focus();
       return;
     }
+
+     // making a get request
+     const res = await axios.post("http://localhost:400/api/users", {
+      email: emailInputRef.current.value, 
+      passwordInputRef: passwordInputRef.current.value
+    })
   };
 
   const handleSignUp = (e) => {
