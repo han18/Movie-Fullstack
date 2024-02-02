@@ -13,6 +13,8 @@ function NavBar() {
 
   return (
     <nav>
+      <h1>Movie Full-Stack App</h1>
+
       <ul>
         <li>
           <Link to="/">Home</Link>

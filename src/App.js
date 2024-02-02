@@ -30,21 +30,39 @@ function App() {
   }, []);
 
   return (
-    <UserContext.Provider value={user, setUser}>
+    <UserContext.Provider value={(user, setUser)}>
       <ThemeContext.Provider value={{ theme, setTheme }}>
-        <div className="App">
-          <h1>Movie Full-Stack App</h1>
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/movies" element={<MovieList movies={movies} />} />
-            <Route path="/movies/:id" element={<MovieDetails />} />
-          </Routes>
-          {/* <MovieList movies={movies} /> */}
+        <div>
+          {user ? (
+            <>
+              <NavBar />
+
+              <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/movies" element={<MovieList movies={movies} />} />
+                <Route path="/movies/:id" element={<MovieDetails />} />
+              </Routes>
+            </>
+          ) : (
+            <MainPage />
+          )}
         </div>
       </ThemeContext.Provider>
-    </UserContext>
+    </UserContext.Provider>
   );
 }
 
 export default App;
+
+// this is the old code before adding the user context to login users
+
+// {/* <div className="App">
+//           <NavBar />
+//           <Routes>
+//             <Route path="/" element={<MainPage />} />
+//             <Route path="/movies" element={<MovieList movies={movies} />} />
+//             <Route path="/movies/:id" element={<MovieDetails />} />
+//           </Routes>
+
+//           {/* <MovieList movies={movies} /> */}
+//         </div> */}
